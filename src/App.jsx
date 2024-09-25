@@ -1,5 +1,4 @@
-import React from "react";
-import PriceCard from "./Components/UI/PriceCard";
+// import PriceCard from "./Components/UI/PriceCard";
 
 function App() {
   // const plans = [
