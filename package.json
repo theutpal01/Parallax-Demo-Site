@@ -10,9 +10,7 @@
 		"preview": "vite preview",
 		"fix": "npm run format && npm run lint:fix",
 		"format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-		"lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-		"fix:eslint": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
-		"fix:prettier": "prettier --write ."
+		"lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
 	},
 	"dependencies": {
 		"react": "^18.3.1",
