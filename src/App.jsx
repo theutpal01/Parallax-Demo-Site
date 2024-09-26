@@ -1,5 +1,6 @@
 // import PriceCard from "./Components/UI/PriceCard";
 
+
 function App() {
   // const plans = [
   //   {
@@ -68,7 +69,7 @@ function App() {
   // );
   return (
     <>
-    
+
     </>
   )
 }
@@ -100,6 +101,7 @@ export default App;
 //   );
 // }
 
+
 // export default App;
 
 
@@ -117,3 +119,4 @@ export default App;
 // export default App
 
 // Header ends
+
