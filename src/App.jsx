@@ -101,3 +101,19 @@ export default App;
 // }
 
 // export default App;
+
+
+// For header
+
+// import React from 'react'
+// import Header from './Components/Header/Header'
+// function App() {
+//   return (
+//     <div className='p-2'>
+//         <Header />
+//     </div>
+//   )
+// }
+// export default App
+
+// Header ends
