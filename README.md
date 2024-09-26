@@ -1,122 +1,70 @@
-# VIT UNIVERSITY SITE
+# Getting Started with Create React App
 
-This is a website landing page with parallax effect.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Getting Started
+## Available Scripts
 
-### Prerequisites
+In the project directory, you can run:
 
--   Node.js (v20.17.0)
--   npm (v10.8.2)
+### `npm start`
 
-### Installation
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-1. Clone the repository:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-    ```
-    git clone https://github.com/theutpal01/vit-university-site.git
-    cd vit-university-site
-    ```
+### `npm test`
 
-2. Install dependencies:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    ```
-    npm install
-    ```
+### `npm run build`
 
-3. Start the development server:
-    ```
-    npm run dev
-    ```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Project Structure
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
--   `src/`: Contains the source code
-    -   `components/`: React components
-    -   `App.jsx`: Main application component
-    -   `main.jsx`: Entry point
--   `public/`: Static assets
--   `index.html`: HTML template
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Contributing
+### `npm run eject`
 
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature-branch-name`
-3. Make your changes
-4. Run Prettier to format your code:
-    ```
-    npx prettier --write .
-    ```
-5. Run ESLint to check for code quality issues:
-    ```
-    npm run lint
-    ```
-6. Fix any linting errors or warnings
-7. Commit your changes: `git commit -m 'Add some feature'`
-8. Push to the branch: `git push origin feature-branch-name`
-9. Submit a pull request
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### Code Style and Linting
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-This project uses Prettier for code formatting and ESLint for code quality checks.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-#### Prettier
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-The Prettier configuration is defined in `.prettierrc.json`.
+## Learn More
 
-To format your code before committing:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-1. Run Prettier:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-    ```
-    npx prettier --write .
-    ```
+### Code Splitting
 
-2. Check for any formatting issues:
-    ```
-    npx prettier --check .
-    ```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Prettier will automatically format your code according to the project's style guidelines.
+### Analyzing the Bundle Size
 
-#### ESLint
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-ESLint is configured to check for code quality issues and enforce best practices.
+### Making a Progressive Web App
 
-To run ESLint:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-```
-npm run lint
-```
+### Advanced Configuration
 
-This will check all JavaScript and JSX files in the project for linting issues. Fix any errors or warnings before committing your changes.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-## Built With
+### Deployment
 
--   [React](https://reactjs.org/) - v18.3.1
--   [React DOM](https://reactjs.org/docs/react-dom.html) - v18.3.1
--   [Vite](https://vitejs.dev/) - v5.4.1
--   [Tailwind CSS](https://tailwindcss.com/) - v3.4.11
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Development Dependencies
+### `npm run build` fails to minify
 
--   [@eslint/js](https://eslint.org/) - v9.9.0
--   [@types/react](https://www.npmjs.com/package/@types/react) - v18.3.3
--   [@types/react-dom](https://www.npmjs.com/package/@types/react-dom) - v18.3.0
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react) - v4.3.1
--   [autoprefixer](https://github.com/postcss/autoprefixer) - v10.4.20
--   [eslint](https://eslint.org/) - v9.9.0
--   [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) - v7.35.0
--   [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) - v5.1.0-rc.0
--   [eslint-plugin-react-refresh](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) - v0.4.9
--   [globals](https://github.com/sindresorhus/globals) - v15.9.0
--   [postcss](https://postcss.org/) - v8.4.45
--   [prettier](https://prettier.io/) - v3.3.3
--   [tailwindcss](https://tailwindcss.com/) - v3.4.13
-
-## Scripts
-
--   `npm run dev`: Start the development server
--   `npm run build`: Build the production-ready app
--   `npm run lint`: Run ESLint
--   `npm run preview`: Preview the built app
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
