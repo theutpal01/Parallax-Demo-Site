@@ -1,10 +1,75 @@
-import React from "react";
-import PriceCard from "./Components/UI/PriceCard";
+// import PriceCard from "./Components/UI/PriceCard";
+
 
 function App() {
+  // const plans = [
+  //   {
+  //     plan: "Per Month",
+  //     price: "£29.99",
+  //     features: [
+  //       "Step by Step Guidance",
+  //       "Practical world-class education",
+  //       "1 to 1 support",
+  //       "High-Income Skills Acquisition",
+  //       "World Class Platform",
+  //       "0 Experience Required",
+  //       "50GB Cloud Storage",
+  //     ],
+  //     buttonText: "Join this one?",
+  //     theme: "primary",
+  //   },
+  //   {
+  //     plan: "6 Month",
+  //     price: "£149.99",
+  //     features: [
+  //       "Step by Step Guidance",
+  //       "Practical world-class education",
+  //       "1 to 1 support",
+  //       "High-Income Skills Acquisition",
+  //       "World Class Platform",
+  //       "0 Experience Required",
+  //       "50GB Cloud Storage",
+  //     ],
+  //     buttonText: "Join this one?",
+  //     theme: "secondary",
+  //   },
+  //   {
+  //     plan: "12 Month",
+  //     price: "£299.99",
+  //     features: [
+  //       "Step by Step Guidance",
+  //       "Practical world-class education",
+  //       "1 to 1 support",
+  //       "High-Income Skills Acquisition",
+  //       "World Class Platform",
+  //       "0 Experience Required",
+  //       "50GB Cloud Storage",
+  //     ],
+  //     buttonText: "Join this one?",
+  //     theme: "tertiary",
+  //   },
+  // ];
+
+  // return (
+  //   <div className="min-h-screen bg-gradient-to-r from-gray-800 to-black flex justify-center items-center p-6">
+  //     <div className="grid md:grid-cols-3 gap-6">
+  //       {plans.map((plan, index) => (
+  //         <PriceCard
+  //           key={index}
+  //           plan={plan.plan}
+  //           price={plan.price}
+  //           features={plan.features}
+  //           buttonText={plan.buttonText}
+  //           theme={plan.theme}
+  //           size="md"
+  //         />
+  //       ))}
+  //     </div>
+  //   </div>
+  // );
   return (
     <>
-    <HeroSectionCard />
+
     </>
   )
 }
@@ -36,4 +101,22 @@ export default App;
 //   );
 // }
 
+
 // export default App;
+
+
+// For header
+
+// import React from 'react'
+// import Header from './Components/Header/Header'
+// function App() {
+//   return (
+//     <div className='p-2'>
+//         <Header />
+//     </div>
+//   )
+// }
+// export default App
+
+// Header ends
+
