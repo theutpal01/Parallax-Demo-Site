@@ -2,26 +2,30 @@ import Button from "../UI/Button";
 
 function Enroll() {
 	return (
-		<div className="h-screen text-white">
-			<div className="w-10/12 border rounded-3xl bg-gray-800 border-white  mx-auto text-center flex flex-row items-center justify-center h-3/4">
-				<h2 className="text-5xl sm:text-6xl md:text-10xl font-bold w-3/4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 font-manrope">
-					YOU HAVE 2 OPTIONS,<br />JOIN NOW SEEK YOUR FORTUNE <br/>OR <br/>WASTE YOUR
-					POTENTIAL AND HAVE PERMANENT REGRET
-				</h2>
-				<div className="w-1/4 mx-auto">
-					<Button
-						variant="filled"
-						size="xl"
-						className="!py-3 !w-fit"
-						text="Enroll Now"
-					>
-						<img
-							className="w-10 pl-2"
-							src="images/tick.png"
-							alt="Arrow"
-						/>
-					</Button>
-				</div>
+		<div className="flex justify-center items-center w-3/4 mx-auto pb-40">
+			<h2 className="text-lg md:text-xl lg:text-3xl xl:text-5xl font-bold w-3/4 text-gray-400 bg-clip-text font-manrope !leading-relaxed">
+				YOU HAVE 2 OPTIONS,
+				<br />
+				JOIN NOW <span className="text-primary">SEEK</span> YOUR{" "}
+				<span className="text-primary">FORTUNE</span> <br />
+				OR <br />
+				WASTE YOUR
+				<span className="text-primary">POTENTIAL</span> AND HAVE PERMANENT
+				<span className="text-secondary-dark"> REGRET</span>
+			</h2>
+			<div className="w-1/4 mx-auto">
+				<Button
+					variant="filled"
+					size="xl"
+					className="!py-3 !w-fit"
+					text="Enroll Now"
+				>
+					<img
+						className="w-10 pl-2"
+						src="images/tick.png"
+						alt="Arrow"
+					/>
+				</Button>
 			</div>
 		</div>
 	);

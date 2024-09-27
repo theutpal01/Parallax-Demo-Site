@@ -8,7 +8,7 @@ function Hero() {
 		<div className="mt-10">
 			<HeroSectionCard />
 			<div className="text-center py-72 flex flex-col items-center justify-center mx-auto">
-				<h2 className="text-7xl md:text-10xl font-bold font-manrope text-gray-400">
+				<h2 className="text-2xl md:text-4xl lg:text-6xl xl:text-8xl font-bold font-sans text-gray-400">
 					PRACTICAL <span className="text-primary">EDUCATION</span>{" "}
 					<br />
 					<br />
@@ -16,7 +16,7 @@ function Hero() {
 					REALISATION
 				</h2>
 			</div>
-			<div className=" pl-10">
+			<div className="pl-10">
 				<Details />
 				<Join />
 			</div>

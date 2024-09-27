@@ -6,28 +6,11 @@ function PriceCard({
 	price,
 	features,
 	buttonText,
-	theme = "default",
-	size = "md",
 	className,
 }) {
-	const styles = {
-		primary:
-			"text-white border-primary-light dark:border-primary-dark bg-opacity-50",
-		secondary:
-			"text-white border-secondary-light dark:border-secondary-dark bg-opacity-50",
-		tertiary:
-			"text-white border-tertiary-light dark:border-tertiary-dark bg-opacity-50",
-		default: "text-white bg-opacity-50",
-		xs: "max-w-sm",
-		sm: "max-w-md",
-		md: "max-w-lg",
-		lg: "max-w-xl",
-		xl: "max-w-2xl",
-	};
-
 	return (
 		<div
-			className={`w-full h-full border rounded-xl shadow p-6 bg-slate-800 ${styles[theme]} ${styles[size]} ${className}`}
+			className={`w-full h-full rounded-3xl p-6 bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-lg ${className}`}
 		>
 			{/* Plan */}
 			<h2 className="text-2xl font-bold mb-1 font-manrope text-gray-400">

@@ -4,13 +4,14 @@ import Button from "../UI/Button";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<header className="text-white font-inter">
-			<div className="mx-auto px-4 sm:px-6 lg:px-10 border border-white bg-background rounded-3xl backdrop-blur-sm">
+			<div className="mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center">
 						<span className="text-2xl font-bold">
-							Vellore University
+							<span className="text-primary">Vellore</span> University
 						</span>
 					</div>
 					<div className="hidden xl:flex space-x-8 items-center">
@@ -57,7 +58,7 @@ export default function Header() {
 			</div>
 
 			<div
-				className={`fixed z-0 top-0 right-0 w-64 h-full bg-background text-white transition-transform transform ${
+				className={`fixed z-50 top-1/2 -translate-y-1/2 right-0 w-64 h-[95%] bg-background text-white transition-transform transform backdrop-blur-xl bg-white/10 rounded-l-lg ${
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>

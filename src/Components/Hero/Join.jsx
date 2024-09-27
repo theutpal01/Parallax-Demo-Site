@@ -3,9 +3,9 @@ import Button from "../UI/Button";
 
 function Join() {
 	return (
-		<div className="h-screen text-white">
-			<div className="w-10/12 gap-4 p-5 border rounded-3xl border-white  mx-auto text-center flex flex-col items-center justify-center h-3/4">
-				<h3 className="text-7xl md:text-10xl font-bold font-manrope text-gray-400 leading-relaxed">
+		<div className="h-screen mx-auto flex items-end">
+			<div className="w-full gap-10 p-10 border-b border-l rounded-3xl border-b-violet-950 border-l-violet-950 font-manrope mx-auto text-center flex flex-col items-center justify-center py-10 pt-28 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5 bg-gradient-to-tr from-primary-dark/25 via-white/5 to-transparent">
+				<h3 className="text-xl md:text-2xl lg:text-4xl xl:text-6xl font-semibold text-gray-400 !leading-relaxed">
 					UNLOCK YOUR{" "}
 					<span className="text-primary">TRUE POTENTIAL</span> THROUGH
 					LEARNING PRACTICAL

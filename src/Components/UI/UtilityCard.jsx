@@ -22,11 +22,11 @@ function UtilityCard({
 
 	return (
 		<div
-			className={`max-w-80 min-w-96 h-full border rounded-xl shadow p-6 items-center ${styles[theme]} ${styles[size]} ${className} bg-opacity-10`}
+			className={`max-w-80 min-w-96 h-full border rounded-2xl p-6 items-center bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5 ${styles[theme]} ${styles[size]} ${className}`}
 		>
 			{/* Icon */}
 			<div className="flex flex-col items-center">
-				<div className="text-yellow-500 text-6xl mb-6">{icon}</div>
+				<div className="text-primary-dark text-6xl mb-6">{icon}</div>
 			</div>
 
 			{/* Title */}
