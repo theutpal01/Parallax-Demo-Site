@@ -10,12 +10,12 @@ export default {
 				},
 				primary: {
 					light: "#F7CA50",
-					DEFAULT: "#B1EDE8",
-					dark: "#f4bc1e",
+					DEFAULT: "#F7CA50",
+					dark: "#F4BC1E",
 				},
 				secondary: {
-					light: "#F7CA50",
-					DEFAULT: "#F7CA50",
+					light: "#F4678F",
+					DEFAULT: "#F25481",
 					dark: "#F0386B",
 				},
 				tertiary: {
@@ -28,6 +28,11 @@ export default {
 				sans: ["'Clash Display'", "sans-serif"],
 				manrope: ["Manrope", "sans-serif"],
 				inter: ["Inter", "sans-serif"],
+			},
+			borderRadius: {
+				none: "0",
+				"3xl": "2.2rem",
+				full: "9999px",
 			},
 		},
 	},
