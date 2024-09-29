@@ -10,7 +10,8 @@ function Enroll() {
 				<span className="text-primary">FORTUNE</span> <br />
 				OR <br />
 				WASTE YOUR
-				<span className="text-primary">POTENTIAL</span> AND HAVE PERMANENT
+				<span className="text-primary">POTENTIAL</span> AND HAVE
+				PERMANENT
 				<span className="text-secondary-dark"> REGRET</span>
 			</h2>
 			<div className="w-1/4 mx-auto">

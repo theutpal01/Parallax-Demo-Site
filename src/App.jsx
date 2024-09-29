@@ -8,20 +8,20 @@ import Extra from "./Components/Pricing/Extra";
 import BG1 from "./Components/UI/BG1";
 
 function App() {
-  return (
-    <div className="relative w-full min-h-screen overflow-hidden">
-      <BG1 />
-      <div className="container mx-auto py-10 px-1 relative z-10">
-        <Header />
-        <Hero />
-        <DisplayCards />
-        <Pricing />
-        <Extra />
-        <Enroll />
-        <Footer />
-      </div>
-    </div>
-  );
+	return (
+		<div className="relative w-full min-h-screen overflow-hidden">
+			<BG1 />
+			<div className="px-5 md:px-16 mt-10 mx-auto md:py-10 relative z-10 bg-transparent">
+				<Header />
+				<Hero />
+				<DisplayCards />
+				<Pricing />
+				<Extra />
+				<Enroll />
+				<Footer />
+			</div>
+		</div>
+	);
 }
 
 export default App;

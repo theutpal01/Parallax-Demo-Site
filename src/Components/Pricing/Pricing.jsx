@@ -51,7 +51,7 @@ function Pricing() {
 	];
 
 	return (
-		<div className="min-h-screen w-full flex flex-col justify-center items-center">
+		<div className="min-h-screen w-full flex flex-col justify-center items-center mt-36">
 			<div className="grid lg:grid-cols-3 gap-16 py-10">
 				{plans.map((plan, index) => (
 					<PriceCard

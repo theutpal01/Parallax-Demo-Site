@@ -34,6 +34,9 @@ export default {
 				"3xl": "2.2rem",
 				full: "9999px",
 			},
+			backgroundImage: {
+				hero: "url('/images/sphere.png'), url('/images/dollar.png')",
+			},
 		},
 	},
 	plugins: [],
