@@ -2,18 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
 	@font-face {
 		font-family: "Clash Display";
 		font-weight: 200 700;
 		font-display: swap;
 		font-style: normal;
-		src: url(/fonts/ClashDisplay-Variable.ttf)
-			format("truetype");
+		src: url(/fonts/ClashDisplay-Variable.ttf) format("truetype");
 	}
 }
-
 
 @layer base {
 	@font-face {
@@ -21,11 +18,9 @@
 		font-weight: 200 700;
 		font-display: swap;
 		font-style: normal;
-		src: url(/fonts/Manrope-Variable.ttf)
-			format("truetype");
+		src: url(/fonts/Manrope-Variable.ttf) format("truetype");
 	}
 }
-
 
 @layer base {
 	@font-face {
@@ -33,7 +28,6 @@
 		font-weight: 200 700;
 		font-display: swap;
 		font-style: normal;
-		src: url(/fonts/Inter-Variable.ttf)
-			format("truetype");
+		src: url(/fonts/Inter-Variable.ttf) format("truetype");
 	}
 }

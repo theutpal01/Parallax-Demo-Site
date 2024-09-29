@@ -1,5 +1,8 @@
-import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid } from "swiper/modules";
 import UtilityCard from "../UI/UtilityCard";
+import "swiper/css";
+import "swiper/css/grid";
 
 function DisplayCards() {
 	const cards = [
@@ -77,54 +80,27 @@ function DisplayCards() {
 		},
 	];
 
-	const sliderRef = useRef(null);
-	let isDown = false;
-	let startX;
-	let scrollLeft;
-
-	const handleMouseDown = (e) => {
-		isDown = true;
-		sliderRef.current.classList.add("active");
-		startX = e.pageX - sliderRef.current.offsetLeft;
-		scrollLeft = sliderRef.current.scrollLeft;
-	};
-
-	const handleMouseLeave = () => {
-		isDown = false;
-		sliderRef.current.classList.remove("active");
-	};
-
-	const handleMouseUp = () => {
-		isDown = false;
-		sliderRef.current.classList.remove("active");
-	};
-
-	const handleMouseMove = (e) => {
-		if (!isDown) return;
-		e.preventDefault();
-		const x = e.pageX - sliderRef.current.offsetLeft;
-		const walk = (x - startX) * 2; // Adjust the speed of dragging
-		sliderRef.current.scrollLeft = scrollLeft - walk;
-	};
-
 	return (
-		<div className="h-screen items-center flex">
-			<div
-				ref={sliderRef}
-				className="flex overflow-hidden gap-5 p-10 bg-background w-full cursor-grab"
-				onMouseDown={handleMouseDown}
-				onMouseLeave={handleMouseLeave}
-				onMouseUp={handleMouseUp}
-				onMouseMove={handleMouseMove}
+		<div className="h-screen flex mx-auto">
+			<Swiper
+				className="h-full w-full mx-auto py-10 my-20"
+				modules={[Grid]}
+				slidesPerView={3}
+				grid={{
+					rows: 2,
+				}}
+				spaceBetween={30}
 			>
-				{cards.map((card) => (
-					<UtilityCard
-						icon={card.icon}
-						title={card.title}
-						description={card.description}
-					/>
+				{cards.map((card, idx) => (
+					<SwiperSlide key={idx} className="flex justify-center">
+						<UtilityCard
+							icon={card.icon}
+							title={card.title}
+							description={card.description}
+						/>
+					</SwiperSlide>
 				))}
-			</div>
+			</Swiper>
 		</div>
 	);
 }
