@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+		"build": "vite build",
+		"lint": "eslint ./src",
+		"preview": "vite preview",
+		"fix": "npm run format && npm run lint:fix",
+		"format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+		"lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
     "react": "^18.3.1",
