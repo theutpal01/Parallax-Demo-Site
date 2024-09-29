@@ -1,4 +1,5 @@
-import { FaCheckSquare, FaCheck } from "react-icons/fa";
+/* eslint-disable react/prop-types */
+import { FaCheckSquare } from "react-icons/fa";
 import Button from "./Button";
 
 function PriceCard({
@@ -49,35 +50,7 @@ function PriceCard({
 			</div>
 		</div>
 	);
+
 }
 
 export default PriceCard;
-
-// Example Use of Price Card
-
-// const plans = [
-//     {
-//       plan: "Per Month",
-//       price: "£29.99",
-//       features: [
-//         "Step by Step Guidance",
-//         "Practical world-class education",
-//         "1 to 1 support",
-//         "High-Income Skills Acquisition",
-//         "World Class Platform",
-//         "0 Experience Required",
-//         "50GB Cloud Storage",
-//       ],
-//       buttonText: "Join this one?",
-//     },
-//   ];
-
-// {plans.map((plan, index) => (
-//   <PriceCard
-//     key={index}
-//     plan={plan.plan}
-//     price={plan.price}
-//     features={plan.features}
-//     buttonText={plan.buttonText}
-//   />
-// ))}
