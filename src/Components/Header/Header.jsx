@@ -7,7 +7,7 @@ export default function Header() {
 
 	return (
 		<header className="text-white font-inter">
-			<div className="mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
+			<div className="mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur bg-opacity-0 bg-white/5">
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center">
 						<span className="text-2xl font-bold">
@@ -59,7 +59,7 @@ export default function Header() {
 			</div>
 
 			<div
-				className={`fixed z-50 top-1/2 -translate-y-1/2 right-0 w-64 h-[95%] text-white transition-transform transform backdrop-blur-xl bg-white/5 rounded-l-lg ${
+				className={`fixed z-50 top-1/2 -translate-y-1/2 right-0 w-64 h-[95%] text-white transition-transform transform backdrop-blur bg-white/5 rounded-l-lg ${
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>
