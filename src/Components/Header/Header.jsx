@@ -11,7 +11,8 @@ export default function Header() {
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center">
 						<span className="text-2xl font-bold">
-							<span className="text-primary">Vellore</span> University
+							<span className="text-primary">Vellore</span>{" "}
+							University
 						</span>
 					</div>
 					<div className="hidden xl:flex space-x-8 items-center">
@@ -58,7 +59,7 @@ export default function Header() {
 			</div>
 
 			<div
-				className={`fixed z-50 top-1/2 -translate-y-1/2 right-0 w-64 h-[95%] bg-background text-white transition-transform transform backdrop-blur-xl bg-white/10 rounded-l-lg ${
+				className={`fixed z-50 top-1/2 -translate-y-1/2 right-0 w-64 h-[95%] text-white transition-transform transform backdrop-blur-xl bg-white/5 rounded-l-lg ${
 					isOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>

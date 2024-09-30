@@ -1,13 +1,7 @@
 import { FaCheckSquare } from "react-icons/fa";
 import Button from "./Button";
 
-function PriceCard({
-	plan,
-	price,
-	features,
-	buttonText,
-	className,
-}) {
+function PriceCard({ plan, price, features, buttonText, className }) {
 	return (
 		<div
 			className={`w-full h-full rounded-3xl p-6 bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-lg ${className} backdrop-blur-xl bg-white/1 `}
@@ -48,32 +42,3 @@ function PriceCard({
 }
 
 export default PriceCard;
-
-// Example Use of Price Card
-
-// const plans = [
-//     {
-//       plan: "Per Month",
-//       price: "£29.99",
-//       features: [
-//         "Step by Step Guidance",
-//         "Practical world-class education",
-//         "1 to 1 support",
-//         "High-Income Skills Acquisition",
-//         "World Class Platform",
-//         "0 Experience Required",
-//         "50GB Cloud Storage",
-//       ],
-//       buttonText: "Join this one?",
-//     },
-//   ];
-
-// {plans.map((plan, index) => (
-//   <PriceCard
-//     key={index}
-//     plan={plan.plan}
-//     price={plan.price}
-//     features={plan.features}
-//     buttonText={plan.buttonText}
-//   />
-// ))}

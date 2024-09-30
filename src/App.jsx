@@ -10,8 +10,9 @@ import CardsAndPrice from "./Components/Pricing/CardsAndPrice";
 function App() {
 	
 	return (
-		<div className="w-full min-h-screen">
-			<div className="container mx-auto py-10 px-1">
+		<div className="relative w-full min-h-screen overflow-hidden">
+			<BG1 />
+			<div className="px-5 md:px-16 mt-10 mx-auto md:py-10 relative z-10 bg-transparent">
 				<Header />
 				<Hero />
 				<CardsAndPrice />

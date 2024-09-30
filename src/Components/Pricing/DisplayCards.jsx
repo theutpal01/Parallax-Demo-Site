@@ -1,5 +1,8 @@
-import { useRef } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Grid } from "swiper/modules";
 import UtilityCard from "../UI/UtilityCard";
+import "swiper/css";
+import "swiper/css/grid";
 
 function DisplayCards() {
 	const cards = [
@@ -103,47 +106,28 @@ function DisplayCards() {
 		if (!isDown) return;
 		e.preventDefault();
 		const x = e.pageX - sliderRef.current.offsetLeft;
-		const walk = (x - startX) * 2;
+		const walk = (x - startX) * 2; // Adjust the speed of dragging
 		sliderRef.current.scrollLeft = scrollLeft - walk;
 	};
 
-	
-
 	return (
-		<div className="items-center flex flex-col">
-			<div className="h-32"></div>
+		<div className="h-screen items-center flex">
 			<div
 				ref={sliderRef}
-				className="flex flex-col overflow-auto md:overflow-hidden gap-5 px-10 bg-background w-full cursor-grab"
+				className="flex overflow-hidden gap-5 p-10 bg-background w-full cursor-grab"
 				onMouseDown={handleMouseDown}
 				onMouseLeave={handleMouseLeave}
 				onMouseUp={handleMouseUp}
 				onMouseMove={handleMouseMove}
 			>
-				<div className="flex gap-4">
-
 				{cards.map((card) => (
 					<UtilityCard
-					icon={card.icon}
-					title={card.title}
-					description={card.description}
+						icon={card.icon}
+						title={card.title}
+						description={card.description}
 					/>
-					
-					))}
-				</div>
-				<div className="flex gap-4 mt-10">
-				{cards.map((card) => (
-					<UtilityCard
-					icon={card.icon}
-					title={card.title}
-					description={card.description}
-					/>
-					
-					))}
-					</div>
+				))}
 			</div>
-			<div className="h-32"></div>
-
 		</div>
 	);
 }

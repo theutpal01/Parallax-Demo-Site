@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 function UtilityCard({
 	icon,
 	title,
@@ -41,13 +43,3 @@ function UtilityCard({
 }
 
 export default UtilityCard;
-
-// Example Use
-
-{
-	/* <UtilityCard
-    icon={<FaUser />}
-    title="User Management"
-    description="Manage users and their permissions."
-/> */
-}
