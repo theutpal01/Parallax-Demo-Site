@@ -7,7 +7,7 @@ export default function Header() {
 
 	return (
 		<header className="text-white font-inter">
-			<div className="mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
+			<div className=" backdrop-blur-xl bg-white/1 mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center">
 						<span className="text-2xl font-bold">

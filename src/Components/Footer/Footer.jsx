@@ -15,8 +15,9 @@ function Footer() {
 				<span className="text-primary">NOT RESPONSIBLE</span> FOR ANY
 				STUDENT'S DECISION AND/OR FAILURE TO MAKE MONEY.
 			</p>
+			<div className="h-64"></div>
 
-			<div className="mt-20 text-primary flex justify-between">
+			<div className="text-primary flex justify-between">
 				<a href="#">PRIVACY POLICY</a>
 				<a href="#">TERMS AND CONDITIONS</a>
 				<a href="#">RIGHTS RESERVED BY ACE INSTITUTE</a>

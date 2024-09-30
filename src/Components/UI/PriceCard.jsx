@@ -1,4 +1,4 @@
-import { FaCheckSquare, FaCheck } from "react-icons/fa";
+import { FaCheckSquare } from "react-icons/fa";
 import Button from "./Button";
 
 function PriceCard({
@@ -10,17 +10,14 @@ function PriceCard({
 }) {
 	return (
 		<div
-			className={`w-full h-full rounded-3xl p-6 bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-lg ${className}`}
+			className={`w-full h-full rounded-3xl p-6 bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-lg ${className} backdrop-blur-xl bg-white/1 `}
 		>
-			{/* Plan */}
 			<h2 className="text-2xl font-bold mb-1 font-manrope text-gray-400">
 				{plan}
 			</h2>
 
-			{/* Price */}
 			<p className="text-4xl font-semibold mb-12 font-manrope">{price}</p>
 
-			{/* Features */}
 			<ul className="mb-6">
 				{features.map((feature, index) => (
 					<li
@@ -33,7 +30,6 @@ function PriceCard({
 				))}
 			</ul>
 
-			{/* Button (Centered) */}
 			<div className="flex justify-center">
 				<Button
 					variant="filled"
