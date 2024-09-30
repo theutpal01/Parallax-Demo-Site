@@ -4,17 +4,17 @@ import Button from "./Button";
 function PriceCard({ plan, price, features, buttonText, className }) {
 	return (
 		<div
-			className={`w-full h-full rounded-3xl p-10 bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-4xl ${className}`}
+			className={`w-full h-full rounded-3xl p-10 backdrop-blur bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-4xl flex gap-10 flex-col ${className}`}
 		>
-			{/* Plan */}
-			<h2 className="text-2xl font-bold mb-1 font-manrope text-gray-400">
-				{plan}
-			</h2>
+			<div>
+				<h2 className="text-2xl font-bold mb-1 font-manrope text-gray-400">
+					{plan}
+				</h2>
 
-			{/* Price */}
-			<p className="text-5xl font-semibold mb-12 font-manrope">{price}</p>
-
-			{/* Features */}
+				<p className="text-5xl font-semibold mb-12 font-manrope">
+					{price}
+				</p>
+			</div>
 			<ul className="mb-6">
 				{features.map((feature, index) => (
 					<li

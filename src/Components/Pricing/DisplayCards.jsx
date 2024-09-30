@@ -89,7 +89,7 @@ function DisplayCards() {
 				grid={{
 					rows: 2,
 				}}
-				spaceBetween={30}
+				spaceBetween={35}
 			>
 				{cards.map((card, idx) => (
 					<SwiperSlide key={idx} className="flex justify-center">
