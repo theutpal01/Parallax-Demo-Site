@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
+import { Parallax } from "react-scroll-parallax";
 
 function Details() {
 	return (
@@ -82,7 +83,7 @@ function Details() {
 				</SwiperSlide>
 			</Swiper>
 
-			<p className="text-md md:text-lg lg:text-xl xl:text-3xl font-semibold font-manrope text-gray-400 !leading-loose mt-20">
+			<Parallax translateX={[-30, 30]} className="text-md md:text-lg lg:text-xl xl:text-3xl font-semibold font-manrope text-gray-400 !leading-loose mt-20">
 				<span className="text-primary">
 					WEALTH CREATIONS UNIVERSITY
 				</span>{" "}
@@ -96,7 +97,7 @@ function Details() {
 				MODERNISTIC{" "}
 				<span className="text-primary">WEALTH ACQUISITION</span>{" "}
 				METHODS.
-			</p>
+			</Parallax>
 		</div>
 	);
 }

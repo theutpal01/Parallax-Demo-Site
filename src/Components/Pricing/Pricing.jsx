@@ -1,4 +1,4 @@
-import React from "react";
+import { Parallax } from "react-scroll-parallax";
 import PriceCard from "../UI/PriceCard";
 
 function Pricing() {
@@ -51,8 +51,10 @@ function Pricing() {
 	];
 
 	return (
-		<div className="min-h-screen w-full flex flex-col justify-center items-center mt-36">
-			<div className="relative h-screen flex justify-center items-center">
+		<div
+			className="min-h-screen w-full flex flex-col justify-center items-center mt-36"
+		>
+			<Parallax translateX={[-45, 55]} className="relative h-screen flex justify-center items-center">
 				<div className="grid lg:grid-cols-3 gap-16">
 					{plans.map((plan, index) => (
 						<PriceCard
@@ -65,15 +67,27 @@ function Pricing() {
 						/>
 					))}
 				</div>
-				<img className="absolute w-52 top-20 left-1/4" src="images/puzzle.png" alt="Puzzle" />
-				<img className="absolute w-52 top-20 -right-10" src="images/sphere.png" alt="Sphere" />
-				<img className="absolute w-52 right-1/4 bottom-16" src="images/circle.png" alt="Coin" />
-			</div>
-			<p className="w-1/2 py-20 text-xl md:text-2xl lg:text-4xl xl:text-6xl font-bold font-manrope text-gray-400 !leading-relaxed">
+				<img
+					className="absolute w-52 top-20 left-1/4"
+					src="images/puzzle.png"
+					alt="Puzzle"
+				/>
+				<img
+					className="absolute w-52 top-20 -right-10"
+					src="images/sphere.png"
+					alt="Sphere"
+				/>
+				<img
+					className="absolute w-52 right-1/4 bottom-16"
+					src="images/circle.png"
+					alt="Coin"
+				/>
+			</Parallax>
+			<Parallax translateY={[50, -50]} className="w-1/2 py-20 text-xl md:text-2xl lg:text-4xl xl:text-6xl font-bold font-manrope text-gray-400 !leading-relaxed">
 				“TO <span className="text-red-400">PROCRASTINATE</span> IS A
 				CHOICE BUT TO <span className="text-primary">TAKE ACTION</span>{" "}
 				IS A NECESSITY.” <br />– AS, CEO of WCU
-			</p>
+			</Parallax>
 		</div>
 	);
 }

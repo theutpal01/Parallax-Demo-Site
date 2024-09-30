@@ -1,8 +1,9 @@
+import { Parallax } from "react-scroll-parallax";
 import Button from "../UI/Button";
 
 function Enroll() {
 	return (
-		<div className="flex justify-center items-center w-3/4 mx-auto pb-40">
+		<Parallax translateX={[-100, 100]} className="flex justify-center items-center w-3/4 mx-auto pb-40">
 			<h2 className="text-lg md:text-xl lg:text-3xl xl:text-5xl font-bold w-3/4 text-gray-400 bg-clip-text font-manrope !leading-relaxed">
 				YOU HAVE 2 OPTIONS,
 				<br />
@@ -28,7 +29,7 @@ function Enroll() {
 					/>
 				</Button>
 			</div>
-		</div>
+		</Parallax>
 	);
 }
 

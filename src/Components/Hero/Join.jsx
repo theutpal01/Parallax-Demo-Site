@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../UI/Button";
+import { Parallax } from "react-scroll-parallax";
 
 function Join() {
 	return (
@@ -23,11 +24,13 @@ function Join() {
 						alt="Arrow"
 					/>
 				</Button>
-				<img
-					className="absolute top-10 left-20 -translate-x-1/2 -translate-y-1/2"
-					src="images/key.png"
-					alt="Key"
-				/>
+				<Parallax translateX={[500, -40]} className="absolute -top-[40%] left-5 -translate-x-full -translate-y-full">
+					<img
+					className="w-96"
+						src="images/key.png"
+						alt="Key"
+					/>
+				</Parallax>
 			</div>
 		</div>
 	);

@@ -1,3 +1,4 @@
+import { Parallax } from "react-scroll-parallax";
 import HeroSectionCard from "../UI/HeroSectionCard";
 import Details from "./Details";
 import Join from "./Join";
@@ -5,9 +6,11 @@ import Join from "./Join";
 function Hero() {
 	return (
 		<div className="mt-8">
+			<Parallax translateY={[40, -50]}>
 			<HeroSectionCard />
+			</Parallax>
 			<div className="relative text-center py-72 flex flex-col items-center justify-center mx-auto">
-				<div className="h-fit py-24 flex justify-center items-center">
+				<Parallax translateY={[60, -60]} className="h-fit py-24 flex justify-center items-center">
 					<h2 className="text-2xl z-10 md:text-4xl lg:text-6xl xl:text-8xl font-bold font-sans text-gray-400">
 						PRACTICAL{" "}
 						<span className="text-primary">EDUCATION</span> <br />
@@ -15,7 +18,7 @@ function Hero() {
 						FOR <span className="text-primary">FORTUNE</span>{" "}
 						REALISATION
 					</h2>
-				</div>
+				</Parallax>
 
 				<div className="absolute bottom-[10%] right-[5%]">
 					<img
