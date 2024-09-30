@@ -11,7 +11,7 @@ function App() {
 	return (
 		<div className="relative w-full min-h-screen overflow-hidden">
 			<BG1 />
-			<div className="px-5 md:px-16 mt-10 mx-auto md:py-10 relative z-10 bg-transparent">
+			<div className="px-5 md:px-16 mt-10 mx-auto relative z-10 bg-transparent">
 				<Header />
 				<Hero />
 				<DisplayCards />
