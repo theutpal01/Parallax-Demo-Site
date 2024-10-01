@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid } from "swiper/modules";
+import { Grid, Mousewheel } from "swiper/modules";
 import UtilityCard from "../UI/UtilityCard";
 import "swiper/css";
 import "swiper/css/grid";
@@ -80,11 +81,22 @@ function DisplayCards() {
 		},
 	];
 
+	useEffect(() => {
+		// const swiper = document.querySelector('.swiper').swiper;
+		// swiper.forceToAxis = true;
+		// swiper.releaseOnEdges = true;
+		// swiper.sensitivity = 10;
+		// swiper.thresholdDelta = 5;
+	});
+
 	return (
 		<div className="h-screen flex mx-auto">
 			<Swiper
+				// direction="horizontal"
 				className="h-full w-full mx-auto py-10 my-20"
 				modules={[Grid]}
+				// modules={[Grid, Mousewheel]}
+				mousewheel={true}
 				slidesPerView={3}
 				grid={{
 					rows: 2,

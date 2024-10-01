@@ -22,6 +22,7 @@ function HeroSectionCard() {
 			>
 				<img className="w-10 pl-2" src="images/arrow.png" alt="Arrow" />
 			</Button>
+
 		</div>
 	);
 }

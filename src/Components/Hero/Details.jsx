@@ -1,19 +1,31 @@
+import { useEffect } from "react";
+import { Parallax } from "react-scroll-parallax";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
+import { FreeMode, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
-import { Parallax } from "react-scroll-parallax";
 
 function Details() {
+	useEffect(() => {
+		// const swiper = document.querySelector('.swiper').swiper;
+		// swiper.forceToAxis = true;
+		// swiper.releaseOnEdges = true;
+		// swiper.sensitivity = 10;
+		// swiper.thresholdDelta = 5;
+	});
+
 	return (
 		<div className="min-h-screen text-gray-400 bg-transparent font-manrope !leading-loose">
-			<div className="absolute w-[130rem] x-0 h-[90rem] rounded-[50%] border border-yellow-600 origin-center top-[33.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
+			<div className="absolute w-[130rem] h-[90rem] rounded-[50%] border border-yellow-600 origin-center top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
 
 			<Swiper
+				// direction="horizontal"
 				className="h-screen w-full z-10"
 				slidesPerView={1}
+				mousewheel={true}
 				freeMode={true}
 				modules={[FreeMode]}
+				// modules={[FreeMode, Mousewheel]}
 			>
 				<SwiperSlide className="relative flex w-full h-full items-center">
 					<p className="text-md sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl font-bold font-manrope text-gray-400 !leading-relaxed w-[70%]">
@@ -83,7 +95,10 @@ function Details() {
 				</SwiperSlide>
 			</Swiper>
 
-			<Parallax translateX={[-30, 30]} className="text-md md:text-lg lg:text-xl xl:text-3xl font-semibold font-manrope text-gray-400 !leading-loose mt-20">
+			<Parallax
+				translateX={[-30, 30]}
+				className="text-md md:text-lg lg:text-xl xl:text-3xl font-semibold font-manrope text-gray-400 !leading-loose mt-20"
+			>
 				<span className="text-primary">
 					WEALTH CREATIONS UNIVERSITY
 				</span>{" "}
