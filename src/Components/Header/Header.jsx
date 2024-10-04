@@ -10,7 +10,7 @@ export default function Header() {
 			<div className="mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center">
-						<span className="text-2xl font-bold">
+						<span className="text-xl sm:text-2xl font-bold">
 							<span className="text-primary">Vellore</span>{" "}
 							University
 						</span>
@@ -47,12 +47,12 @@ export default function Header() {
 							</Button>
 						</a>
 					</div>
-					<div className="xl:hidden">
+					<div className="xl:hidden flex">
 						<button
 							onClick={() => setIsOpen(!isOpen)}
 							className="text-primary focus:outline-none"
 						>
-							<LuMenu className="h-8 w-8" />
+							<LuMenu className="w-6 h-6 md:w-8 md:h-8" />
 						</button>
 					</div>
 				</div>

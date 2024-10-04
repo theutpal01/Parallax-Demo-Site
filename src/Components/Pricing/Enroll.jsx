@@ -4,8 +4,8 @@ import Button from "../UI/Button";
 function Enroll() {
 	return (
 		<Parallax translateY={[-30, 30]}>
-			<div className="flex justify-center origin-center items-center w-3/4 mx-auto pb-40">
-				<h2 className="text-lg md:text-xl lg:text-3xl xl:text-5xl font-bold w-3/4 text-gray-400 bg-clip-text font-manrope !leading-relaxed">
+			<div className="flex flex-col md:flex-row gap-10 justify-center origin-center items-center w-3/4 mx-auto pb-40">
+				<h2 className="text-lg md:text-xl lg:text-3xl xl:text-5xl font-bold md:w-3/4 text-gray-400 bg-clip-text font-manrope !leading-relaxed">
 					YOU HAVE 2 OPTIONS,
 					<br />
 					JOIN NOW <span className="text-primary">
@@ -18,15 +18,15 @@ function Enroll() {
 					PERMANENT
 					<span className="text-secondary-dark"> REGRET</span>
 				</h2>
-				<div className="w-1/4 mx-auto">
+				<div className="md:w-1/4 mx-auto">
 					<Button
 						variant="filled"
-						size="xl"
+						size="lg"
 						className="!py-3 !w-fit"
 						text="Enroll Now"
 					>
 						<img
-							className="w-10 pl-2"
+							className="w-8 md:w-10 pl-2"
 							src="images/tick.png"
 							alt="Arrow"
 						/>

@@ -55,7 +55,8 @@ function Pricing() {
 	return (
 		<div className="min-h-screen w-full flex flex-col justify-center items-center mt-36 px-10">
 			<Parallax
-				translateX={[-50, 50]}
+				speed={-25}
+				translateX={[-25, 25]}
 				className="relative h-screen hidden lg:flex justify-center items-center"
 			>
 				<div className="grid-cols-3 gap-16 grid">
@@ -71,26 +72,27 @@ function Pricing() {
 						/>
 					))}
 				</div>
-				<img
+				<Parallax
 					className="absolute w-52 top-20 left-1/4"
-					src="images/puzzle.png"
-					alt="Puzzle"
-				/>
-				<img
+					translateY={[-50, 50]}
+				>
+					<img src="images/puzzle.png" alt="Puzzle" />
+				</Parallax>
+				<Parallax
 					className="absolute w-52 top-20 -right-10"
-					src="images/sphere.png"
-					alt="Sphere"
-				/>
-				<img
+					translateY={[-50, 50]}
+				>
+					<img src="images/sphere.png" alt="Sphere" />
+				</Parallax>
+				]\{" "}
+				<Parallax
 					className="absolute w-52 right-1/4 bottom-16"
-					src="images/circle.png"
-					alt="Coin"
-				/>
+					translateX={[50, -50]}
+				>
+					<img src="images/circle.png" alt="Coin" />
+				</Parallax>
 			</Parallax>
-			<Swiper
-				className="block lg:hidden h-full w-full"
-				slidesPerView={1}
-			>
+			<Swiper className="block lg:hidden h-full w-full" slidesPerView={1}>
 				{plans.map((plan, index) => (
 					<SwiperSlide key={index} className="flex justify-center">
 						<PriceCard

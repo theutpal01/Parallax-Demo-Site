@@ -1,4 +1,4 @@
-import { ParallaxProvider } from "react-scroll-parallax";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import Header from "./Components/Header/Header";
 import Hero from "./Components/Hero/Hero";
 import Enroll from "./Components/Pricing/Enroll";
@@ -13,14 +13,14 @@ function App() {
 		<ParallaxProvider>
 			<div className="relative w-full min-h-screen overflow-hidden !bg-background">
 				<BG1 />
-				<div className="mt-10 mx-auto !z-0 !bg-background text-xs md:text-sm">
-					<Header />
-					<Hero />
-					<DisplayCards />
-					<Pricing />
-					<Extra />
-					<Enroll />
-					<Footer />
+				<div className="mt-10 mx-auto !bg-background text-xs md:text-sm">
+						<Header />
+						<Hero />
+						<DisplayCards />
+						<Pricing />
+						<Extra />
+						<Enroll />
+						<Footer />
 				</div>
 			</div>
 		</ParallaxProvider>

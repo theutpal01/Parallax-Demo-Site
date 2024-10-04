@@ -4,7 +4,7 @@ function Footer() {
 			<div className="mx-auto">
 				<div className="w-full bg-primary h-1" />
 			</div>
-			<p className="text-lg md:text-md font-manrope text-gray-400 leading-loose p-5">
+			<p className="text-md md:text-lg text-justify font-manrope text-gray-400 leading-loose p-5">
 				WCU IS AN{" "}
 				<span className="text-primary">ONLINE EDUCATIONAL</span>{" "}
 				COMMUNITY PLATFORM. ANY MEMBERS ENROLLED MUST UNDERSTAND THAT
