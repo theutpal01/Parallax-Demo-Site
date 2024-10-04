@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, Mousewheel } from "swiper/modules";
+import { FreeMode, Grid, Mousewheel } from "swiper/modules";
 import UtilityCard from "../UI/UtilityCard";
 import "swiper/css";
 import "swiper/css/grid";
+import "swiper/css/free-mode";
+
 
 function DisplayCards() {
 	const cards = [
@@ -90,18 +92,56 @@ function DisplayCards() {
 	});
 
 	return (
-		<div className="h-screen flex mx-auto">
+		<div className="h-screen px-10 flex mx-auto">
 			<Swiper
 				// direction="horizontal"
-				className="h-full w-full mx-auto py-10 my-20"
+				className="hidden lg:block h-full w-full mx-auto py-10 my-20"
 				modules={[Grid]}
+				slidesPerView={3}
 				// modules={[Grid, Mousewheel]}
 				mousewheel={true}
-				slidesPerView={3}
 				grid={{
 					rows: 2,
 				}}
-				spaceBetween={35}
+				spaceBetween={20}
+			>
+				{cards.map((card, idx) => (
+					<SwiperSlide key={idx} className="flex justify-center">
+						<UtilityCard
+							icon={card.icon}
+							title={card.title}
+							description={card.description}
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+			<Swiper
+				className="hidden md:block lg:hidden h-full w-full"
+				slidesPerView={2}
+				grid={{
+					rows: 2
+				}}
+				modules={[Grid]}
+				spaceBetween={20}
+			>
+				{cards.map((card, idx) => (
+					<SwiperSlide key={idx} className="flex justify-center">
+						<UtilityCard
+							icon={card.icon}
+							title={card.title}
+							description={card.description}
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+			<Swiper
+				className="block md:hidden h-full w-full"
+				slidesPerView={1}
+				grid={{
+					rows: 2
+				}}
+				modules={[Grid]}
+				spaceBetween={20}
 			>
 				{cards.map((card, idx) => (
 					<SwiperSlide key={idx} className="flex justify-center">

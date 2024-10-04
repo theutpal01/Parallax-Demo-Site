@@ -1,6 +1,6 @@
 function Footer() {
 	return (
-		<div className="w-full p-5">
+		<div className="w-full p-5 px-10">
 			<div className="mx-auto">
 				<div className="w-full bg-primary h-1" />
 			</div>

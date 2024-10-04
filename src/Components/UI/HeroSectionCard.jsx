@@ -2,7 +2,7 @@ import Button from "./Button";
 
 function HeroSectionCard() {
 	return (
-		<div className="mx-auto h-[82vh] rounded-3xl text-white flex flex-col items-center justify-center border border-white bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
+		<div className="mx-10 h-[82vh] rounded-3xl text-white flex flex-col items-center justify-center border border-white bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
 			<div className="text-center flex flex-col gap-10 font-manrope">
 				<h2 className="text-5xl sm:text-6xl md:text-10xl font-bold font-manrope text-gray-400 ">
 					READY TO SEEK

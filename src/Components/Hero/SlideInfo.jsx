@@ -5,7 +5,7 @@ import "swiper/css/effect-cube";
 
 function SlideInfo() {
 	return (
-		<div className="h-auto my-20 content-center w-full bg-background">
+		<div className="h-auto my-20 px-10 content-center w-full bg-background">
 			<Swiper
 				effect={"cube"}
 				loop={true}

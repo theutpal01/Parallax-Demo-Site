@@ -1,5 +1,7 @@
 import { Parallax } from "react-scroll-parallax";
 import PriceCard from "../UI/PriceCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 function Pricing() {
 	const plans = [
@@ -51,11 +53,12 @@ function Pricing() {
 	];
 
 	return (
-		<div
-			className="min-h-screen w-full flex flex-col justify-center items-center mt-36"
-		>
-			<Parallax translateX={[-45, 55]} className="relative h-screen flex justify-center items-center">
-				<div className="grid lg:grid-cols-3 gap-16">
+		<div className="min-h-screen w-full flex flex-col justify-center items-center mt-36 px-10">
+			<Parallax
+				translateX={[-50, 50]}
+				className="relative h-screen hidden lg:flex justify-center items-center"
+			>
+				<div className="grid-cols-3 gap-16 grid">
 					{plans.map((plan, index) => (
 						<PriceCard
 							key={index}
@@ -64,6 +67,7 @@ function Pricing() {
 							features={plan.features}
 							buttonText={plan.buttonText}
 							theme={plan.theme}
+							className="sm:w-[15rem] md:w-[20rem] lg:w-[20rem] xl:w-[25rem]"
 						/>
 					))}
 				</div>
@@ -83,7 +87,27 @@ function Pricing() {
 					alt="Coin"
 				/>
 			</Parallax>
-			<Parallax translateY={[50, -50]} className="w-1/2 py-20 text-xl md:text-2xl lg:text-4xl xl:text-6xl font-bold font-manrope text-gray-400 !leading-relaxed">
+			<Swiper
+				className="block lg:hidden h-full w-full"
+				slidesPerView={1}
+			>
+				{plans.map((plan, index) => (
+					<SwiperSlide key={index} className="flex justify-center">
+						<PriceCard
+							plan={plan.plan}
+							price={plan.price}
+							features={plan.features}
+							buttonText={plan.buttonText}
+							theme={plan.theme}
+							className="w-[25rem]"
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+			<Parallax
+				translateY={[50, -50]}
+				className="w-1/2 py-20 text-xl md:text-2xl lg:text-4xl xl:text-6xl font-bold font-manrope text-gray-400 !leading-relaxed"
+			>
 				“TO <span className="text-red-400">PROCRASTINATE</span> IS A
 				CHOICE BUT TO <span className="text-primary">TAKE ACTION</span>{" "}
 				IS A NECESSITY.” <br />– AS, CEO of WCU

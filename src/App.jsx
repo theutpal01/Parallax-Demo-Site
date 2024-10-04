@@ -7,14 +7,13 @@ import DisplayCards from "./Components/Pricing/DisplayCards";
 import Footer from "./Components/Footer/Footer";
 import Extra from "./Components/Pricing/Extra";
 import BG1 from "./Components/UI/BG1";
-import SlideInfo from "./Components/Hero/SlideInfo";
 
 function App() {
 	return (
 		<ParallaxProvider>
 			<div className="relative w-full min-h-screen overflow-hidden !bg-background">
 				<BG1 />
-				<div className="px-5 md:px-16 mt-10 mx-auto z-10 !bg-background">
+				<div className="mt-10 mx-auto !z-0 !bg-background text-xs md:text-sm">
 					<Header />
 					<Hero />
 					<DisplayCards />

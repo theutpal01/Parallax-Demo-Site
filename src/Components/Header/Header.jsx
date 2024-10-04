@@ -6,7 +6,7 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className="!z-50 text-white font-inter font-medium">
+		<header className="!z-50 mx-10 text-white font-inter font-medium">
 			<div className="mx-auto px-10 lg:px-16 border border-gray-100 rounded-3xl h-full w-full bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-0 bg-white/5">
 				<div className="flex justify-between items-center py-4">
 					<div className="flex items-center">

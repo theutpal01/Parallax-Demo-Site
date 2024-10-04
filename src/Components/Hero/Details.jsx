@@ -27,7 +27,7 @@ function Details() {
 				modules={[FreeMode]}
 				// modules={[FreeMode, Mousewheel]}
 			>
-				<SwiperSlide className="relative flex w-full h-full items-center">
+				<SwiperSlide className="relative pl-20 flex w-full h-full items-center">
 					<p className="text-md sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl font-bold font-manrope text-gray-400 !leading-relaxed w-[70%]">
 						THE CURRENT PERIOD OF{" "}
 						<span className="text-primary-light">
@@ -79,7 +79,7 @@ function Details() {
 						alt="Chart"
 					/>
 				</SwiperSlide>
-				<SwiperSlide className="relative flex w-full h-full items-center justify-end pr-16">
+				<SwiperSlide className="relative flex w-full h-full items-center justify-end pr-20">
 					<p className="text-md sm:text-lg md:text-xl lg:text-3xl xl:text-6xl font-bold font-manrope text-gray-400 text-right !leading-relaxed w-[70%]">
 						AS <span className="text-primary">JOBS</span> PER CAPITA{" "}
 						<span className="text-secondary">DECLINE</span> OVER
