@@ -4,7 +4,7 @@ import Details from "./Details";
 import Join from "./Join";
 import SlideInfo from "./SlideInfo";
 
-function Hero() {
+function Hero({ ref }) {
 	return (
 		<div className="mt-8">
 			<div className="h-screen relative">
@@ -52,7 +52,7 @@ function Hero() {
 			</div>
 
 			<div>
-				<Details />
+				<Details ref={ref}/>
 				<SlideInfo />
 				<Join />
 			</div>

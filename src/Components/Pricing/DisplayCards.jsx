@@ -1,11 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { useIsVisible } from "../../utils/useIsVisible";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid, FreeMode } from "swiper/modules";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import UtilityCard from "../UI/UtilityCard";
-import "swiper/css";
-import "swiper/css/grid";
-import "swiper/css/free-mode";
 
 function DisplayCards() {
 	const cards = [
@@ -83,102 +79,129 @@ function DisplayCards() {
 		},
 	];
 
-	const cardRef = useRef(null);
-	const isInView = useIsVisible(cardRef);
-	const [scroll, setScroll] = useState(true);
+	const renderedCards = [];
+	for (let i = 0; i < cards.length; i += 2) {
+		renderedCards.push(
+			<div className="flex flex-col gap-10 justify-center">
+				{cards.slice(i, i + 2).map((card, index) => (
+					<UtilityCard
+						key={index}
+						icon={card.icon}
+						title={card.title}
+						description={card.description}
+					/>
+				))}
+			</div>,
+		);
+	}
+
+	const sectionRef = useRef(null);
+	const targetRef = useRef(null);
+	gsap.registerPlugin(ScrollTrigger);
+	const [breakpoint, setBreakpoint] = useState("large");
 
 	useEffect(() => {
-		const handleScroll = (event) => {
-			console.log(isInView);
-			if (isInView) {
-				cardRef.current.focus();
-				event.preventDefault();
-				setScroll(false);
-				const { isBeginning, isEnd } = cardRef.current.swiper;
-
-				if (!isEnd && event.deltaY > 0) {
-					cardRef.current.swiper.slideNext(1000);
-					cardRef.current.swiper.disable();
-					setTimeout(() => {
-						cardRef.current.swiper.enable();
-					}, 1000);
-				} else if (!isBeginning && event.deltaY < 0) {
-					cardRef.current.swiper.slidePrev(1000);
-					cardRef.current.swiper.disable();
-					setTimeout(() => {
-						cardRef.current.swiper.enable();
-					}, 1000);
-				} else {
-					if ((isBeginning || isEnd) && !scroll) {
-						setTimeout(() => {
-							setScroll(true);
-						}, 1000);
-					}
-					console.log(scroll, isBeginning, isEnd);
-					if (event.deltaY > 0 && scroll && isEnd) {
-						window.scrollBy(0, 100);
-					} else if (scroll && event.deltaY < 0 && isBeginning) {
-						window.scrollBy(0, -100);
-					}
-				}
+		const handleResize = () => {
+			const width = window.innerWidth;
+			if (width < 640) {
+				setBreakpoint("small");
+			} else if (width < 1024) {
+				setBreakpoint("medium");
+			} else {
+				setBreakpoint("large");
 			}
 		};
+		handleResize(); // Set the initial breakpoint
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
-		// Add wheel event listener
-		window.addEventListener("wheel", handleScroll, { passive: false });
+	useEffect(() => {
+		const pin = gsap.fromTo(
+			sectionRef.current,
+			{
+				translateX: 0,
+			},
+			{
+				translateX: (breakpoint == "large") ? "-100vw" : (breakpoint == "medium") ? "-200vw" : "-500vw",
+				ease: "none",
+				duration: 1,
+				scrollTrigger: {
+					trigger: targetRef.current,
+					start: "top top",
+					end: "1000 top",
+					scrub: 0.6,
+					pin: true,
+				},
+			},
+		);
 
 		return () => {
-			// Clean up event listener
-			window.removeEventListener("wheel", handleScroll);
+			pin.kill();
 		};
-	}, [isInView, scroll]); // Add dependencies to avoid stale closures
+	}, [breakpoint]);
 
 	return (
-		<div className="h-screen px-10 flex mx-auto">
-			<Swiper
-				direction="horizontal"
-				className="h-full w-full mx-auto py-10 my-20"
-				modules={[Grid, FreeMode]}
-				breakpoints={
-					{
-						1024: {
-							slidesPerView: 3,
-							grid: {
-								rows: 2,
-							},
-						},
-						768: {
-							slidesPerView: 2,
-							grid: {
-								rows: 2,
-							},
-						},
-						640: {
-							slidesPerView: 1,
-							grid: {
-								rows: 2,
-							},
-						},
-					}
-				}
-				mousewheel={true}
-				slidesPerView={1}
-				grid={{
-					rows: 2
-				}}
-				spaceBetween={20}
-				ref={cardRef}
-			>
-				{cards.map((card, idx) => (
-					<SwiperSlide key={idx} className="flex justify-center">
-						<UtilityCard
-							icon={card.icon}
-							title={card.title}
-							description={card.description}
-						/>
-					</SwiperSlide>
-				))}
-			</Swiper>
+		<div className="h-[210vh] overflow-hidden">
+			<div className="relative" ref={targetRef}>
+				<div className="h-screen flex absolute *:px-10" ref={sectionRef}>
+					{breakpoint == "large" && (
+						<>
+							<div className="flex w-[100vw] gap-10 justify-center items-center">
+								{renderedCards
+									.slice(0, 3)
+									.map((card, index) => (
+										<div key={index}>{card}</div>
+									))}
+							</div>
+							<div className="flex w-[100vw] gap-10 justify-center items-center">
+								{renderedCards
+									.slice(3, 6)
+									.map((card, index) => (
+										<div key={index}>{card}</div>
+									))}
+							</div>
+						</>
+					)}
+					{breakpoint == "medium" && (
+						<>
+							<div className="flex w-[100vw] gap-10 justify-center items-center">
+								{renderedCards
+									.slice(0, 2)
+									.map((card, index) => (
+										<div key={index}>{card}</div>
+									))}
+							</div>
+							<div className="flex w-[100vw] gap-10 justify-center items-center">
+								{renderedCards
+									.slice(2, 4)
+									.map((card, index) => (
+										<div key={index}>{card}</div>
+									))}
+							</div>
+							<div className="flex w-[100vw] gap-10 justify-center items-center">
+								{renderedCards
+									.slice(4, 6)
+									.map((card, index) => (
+										<div key={index}>{card}</div>
+									))}
+							</div>
+						</>
+					)}
+					{breakpoint == "small" && (
+						<>
+							{renderedCards.map((card, index) => (
+								<div
+									className="flex w-[100vw] gap-10 justify-center items-center"
+									key={index}
+								>
+									{card}
+								</div>
+							))}
+						</>
+					)}
+				</div>
+			</div>
 		</div>
 	);
 }
