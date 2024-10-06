@@ -22,7 +22,7 @@ function Enroll() {
 					<Button
 						variant="filled"
 						size="lg"
-						className="!py-3 !w-fit"
+						className="!py-3 !w-fit !text-md lg:!text-lg"
 						text="Enroll Now"
 					>
 						<img

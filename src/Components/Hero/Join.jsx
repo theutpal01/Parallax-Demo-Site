@@ -25,7 +25,7 @@ function Join() {
 					/>
 				</Button>
 			</div>
-				<Parallax translateY={[100, -100]} className="w-[10rem] md:w-[15rem] lg:w-[20rem] xl:w-[25rem] absolute bottom-1/4 right-0 z-0">
+				<Parallax translateY={[100, -150]} className="w-[10rem] md:w-[15rem] lg:w-[20rem] xl:w-[25rem] absolute bottom-1/4 right-0 z-0">
 					<img
 						src="images/key.png"
 						alt="Key"

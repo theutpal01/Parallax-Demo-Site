@@ -26,19 +26,20 @@ function Hero() {
 					<HeroSectionCard />
 				</Parallax>
 			</div>
-			<div className="relative h-screen text-center py-10 md:py-32 lg:py-72 flex flex-col items-center justify-center mx-auto">
-				<div className="absolute w-10 sm:w-16 md:w-24 lg:w-36 bottom-[10%] z-0 right-[5%]">
-					<img
-						src="/images/bell.png"
-						alt="Bell Icon"
-					/>
-				</div>
+			<div className="relative h-fit lg:h-screen text-center py-72 lg:py-36 flex flex-col items-center justify-center mx-auto">
+				<Parallax
+					className="absolute w-10 sm:w-16 md:w-24 lg:w-36 bottom-[10%] z-0 right-[5%]"
+					speed={100}
+					translateY={[50, -50]}
+					translateX={[100, -100]}
+				>
+					<img src="/images/bell.png" alt="Bell Icon" />
+				</Parallax>
 				<Parallax
 					easing="easeInQuad"
 					className="h-full flex justify-center items-center"
 					speed={50}
 					translateY={[50, -50]}
-					
 				>
 					<h2 className="text-3xl z-10 md:text-4xl lg:text-6xl xl:text-7xl font-bold font-sans text-gray-400">
 						PRACTICAL{" "}

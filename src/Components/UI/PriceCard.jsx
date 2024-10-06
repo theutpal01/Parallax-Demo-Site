@@ -1,12 +1,14 @@
 import { FaCheckSquare } from "react-icons/fa";
 import Button from "./Button";
+import { Parallax } from "react-scroll-parallax";
+
 
 function PriceCard({ plan, price, features, buttonText, className }) {
 	return (
 		<div
 			className={` h-full rounded-3xl p-10 backdrop-blur-md bg-gradient-to-tr from-primary-dark/25 via-white/10 z-10 to-white/5 text-gray-100 max-w-xl flex gap-10 flex-col ${className}`}
 		>
-			<div>
+			<Parallax opacity={[0, 1.5]} scale={[0.8, 1]} easing="easeInSine" startScroll={10}>
 				<h2 className="text-2xl font-bold mb-1 font-manrope text-gray-400">
 					{plan}
 				</h2>
@@ -14,7 +16,7 @@ function PriceCard({ plan, price, features, buttonText, className }) {
 				<p className="text-5xl font-semibold mb-12 font-manrope">
 					{price}
 				</p>
-			</div>
+			</Parallax>
 			<ul className="mb-6">
 				{features.map((feature, index) => (
 					<li

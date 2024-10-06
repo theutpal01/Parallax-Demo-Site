@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/Footer";
 import Extra from "./Components/Pricing/Extra";
 import BG1 from "./Components/UI/BG1";
 
+
 function App() {
 	return (
 		<ParallaxProvider>
