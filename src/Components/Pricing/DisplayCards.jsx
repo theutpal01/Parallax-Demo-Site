@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useIsVisible } from "../../utils/useIsVisible";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Grid, Mousewheel } from "swiper/modules";
+import { Grid, FreeMode } from "swiper/modules";
 import UtilityCard from "../UI/UtilityCard";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/free-mode";
-
 
 function DisplayCards() {
 	const cards = [
@@ -83,65 +83,91 @@ function DisplayCards() {
 		},
 	];
 
+	const cardRef = useRef(null);
+	const isInView = useIsVisible(cardRef);
+	const [scroll, setScroll] = useState(true);
+
 	useEffect(() => {
-		// const swiper = document.querySelector('.swiper').swiper;
-		// swiper.forceToAxis = true;
-		// swiper.releaseOnEdges = true;
-		// swiper.sensitivity = 10;
-		// swiper.thresholdDelta = 5;
-	});
+		const handleScroll = (event) => {
+			console.log(isInView);
+			if (isInView) {
+				cardRef.current.focus();
+				event.preventDefault();
+				setScroll(false);
+				const { isBeginning, isEnd } = cardRef.current.swiper;
+
+				if (!isEnd && event.deltaY > 0) {
+					cardRef.current.swiper.slideNext(1000);
+					cardRef.current.swiper.disable();
+					setTimeout(() => {
+						cardRef.current.swiper.enable();
+					}, 1000);
+				} else if (!isBeginning && event.deltaY < 0) {
+					cardRef.current.swiper.slidePrev(1000);
+					cardRef.current.swiper.disable();
+					setTimeout(() => {
+						cardRef.current.swiper.enable();
+					}, 1000);
+				} else {
+					if ((isBeginning || isEnd) && !scroll) {
+						setTimeout(() => {
+							setScroll(true);
+						}, 1000);
+					}
+					console.log(scroll, isBeginning, isEnd);
+					if (event.deltaY > 0 && scroll && isEnd) {
+						window.scrollBy(0, 100);
+					} else if (scroll && event.deltaY < 0 && isBeginning) {
+						window.scrollBy(0, -100);
+					}
+				}
+			}
+		};
+
+		// Add wheel event listener
+		window.addEventListener("wheel", handleScroll, { passive: false });
+
+		return () => {
+			// Clean up event listener
+			window.removeEventListener("wheel", handleScroll);
+		};
+	}, [isInView, scroll]); // Add dependencies to avoid stale closures
 
 	return (
 		<div className="h-screen px-10 flex mx-auto">
 			<Swiper
-				// direction="horizontal"
-				className="hidden lg:block h-full w-full mx-auto py-10 my-20"
-				modules={[Grid]}
-				slidesPerView={3}
-				// modules={[Grid, Mousewheel]}
+				direction="horizontal"
+				className="h-full w-full mx-auto py-10 my-20"
+				modules={[Grid, FreeMode]}
+				breakpoints={
+					{
+						1024: {
+							slidesPerView: 3,
+							grid: {
+								rows: 2,
+							},
+						},
+						768: {
+							slidesPerView: 2,
+							grid: {
+								rows: 2,
+							},
+						},
+						640: {
+							slidesPerView: 1,
+							grid: {
+								rows: 2,
+							},
+						},
+					}
+				}
 				mousewheel={true}
-				grid={{
-					rows: 2,
-				}}
-				spaceBetween={20}
-			>
-				{cards.map((card, idx) => (
-					<SwiperSlide key={idx} className="flex justify-center">
-						<UtilityCard
-							icon={card.icon}
-							title={card.title}
-							description={card.description}
-						/>
-					</SwiperSlide>
-				))}
-			</Swiper>
-			<Swiper
-				className="hidden md:block lg:hidden h-full w-full"
-				slidesPerView={2}
-				grid={{
-					rows: 2
-				}}
-				modules={[Grid]}
-				spaceBetween={20}
-			>
-				{cards.map((card, idx) => (
-					<SwiperSlide key={idx} className="flex justify-center">
-						<UtilityCard
-							icon={card.icon}
-							title={card.title}
-							description={card.description}
-						/>
-					</SwiperSlide>
-				))}
-			</Swiper>
-			<Swiper
-				className="block md:hidden h-full w-full"
 				slidesPerView={1}
 				grid={{
 					rows: 2
 				}}
-				modules={[Grid]}
 				spaceBetween={20}
+				ref={cardRef}
 			>
 				{cards.map((card, idx) => (
 					<SwiperSlide key={idx} className="flex justify-center">

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useIsVisible } from "../../utils/useIsVisible";
 import { Parallax } from "react-scroll-parallax";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,22 +9,53 @@ import "swiper/css/free-mode";
 function Details() {
 	const swiperRef = useRef(null);
 	const isInView = useIsVisible(swiperRef);
+	const [scroll, setScroll] = useState(true);
 
-	// useEffect(() => {
-	// 	const handleScroll = (event) => {
-	// 		// when the user scrolls down it should be vertical but when isinview is true then it should be horizontal
-	// 		if (isInView) {
-	// 			console.log(event.deltaY);
-	// 			console.log(swiperRef.current.swiper);
-	// 			swiperRef.current.swiper.mouseEntered = true;
-	// 		}
-	// 	}
-	// 	window.addEventListener("wheel", handleScroll, {passive: false});
+	useEffect(() => {
+		const handleScroll = (event) => {
+			if (isInView) {
+				swiperRef.current.focus();
+				console.log("scrolling");
+				event.preventDefault();
+				setScroll(false);
+				const { isBeginning, isEnd } = swiperRef.current.swiper;
 
-	// 	return () => {
-	// 		window.removeEventListener("wheel", handleScroll);
-	// 	}
-	// });
+				if (!isEnd && event.deltaY > 0) {
+					swiperRef.current.swiper.slideNext(1000);
+					swiperRef.current.swiper.disable();
+					setTimeout(() => {
+						swiperRef.current.swiper.enable();
+					}, 1000);
+				} else if (!isBeginning && event.deltaY < 0) {
+					swiperRef.current.swiper.slidePrev(1000);
+					swiperRef.current.swiper.disable();
+					setTimeout(() => {
+						swiperRef.current.swiper.enable();
+					}, 1000);
+				} else {
+					if ((isBeginning || isEnd) && !scroll) {
+						setTimeout(() => {
+							setScroll(true);
+						}, 1000);
+					}
+					console.log(scroll, isBeginning, isEnd);
+					if (event.deltaY > 0 && scroll && isEnd) {
+						window.scrollBy(0, 100);
+					} else if (scroll && event.deltaY < 0 && isBeginning) {
+						window.scrollBy(0, -100);
+					}
+				}
+			}
+		};
+
+		// Add wheel event listener
+		window.addEventListener("wheel", handleScroll, { passive: false });
+
+		return () => {
+			// Clean up event listener
+			window.removeEventListener("wheel", handleScroll);
+		};
+	}, [isInView, scroll]); // Add dependencies to avoid stale closures
 
 	return (
 		<div className="min-h-fit text-gray-400 bg-transparent font-manrope !leading-loose">
@@ -32,11 +63,8 @@ function Details() {
 
 			<Swiper
 				className="h-[20rem] lg:h-screen w-full z-10 px-5"
+				direction="horizontal"
 				slidesPerView={1}
-				// mousewheel={true}
-				freeMode={true}
-				modules={[FreeMode]}
-				// modules={[FreeMode, Mousewheel]}
 				ref={swiperRef}
 			>
 				<SwiperSlide className="relative flex w-full h-full items-center">
@@ -84,16 +112,20 @@ function Details() {
 						src="images/trophy.png"
 						alt="Trophy"
 					/>
-					<img
+					<Parallax startScroll={10}
 						className="absolute -translate-y-1/2 top-1/4 right-[25%] w-8 md:w-16 lg:w-24"
-						src="/images/thumb.png"
-						alt="Thumb"
-					/>
-					<img
+						translateY={[50, -50]}
+						translateX={[-50, 50]}
+					>
+						<img src="/images/thumb.png" alt="Thumb" />
+					</Parallax>
+					<Parallax
 						className="absolute bottom-10 md:bottom-20 left-[25%] w-8 md:w-16 lg:w-24"
-						src="/images/chart.png"
-						alt="Chart"
-					/>
+						speed={-10}
+						translateX={[100, 0]}
+					>
+						<img src="/images/chart.png" alt="Chart" />
+					</Parallax>
 				</SwiperSlide>
 				<SwiperSlide className="relative flex w-full h-full items-center justify-end">
 					<p className="text-md sm:text-lg md:text-xl lg:text-3xl xl:text-6xl font-bold font-manrope text-gray-400 text-right !leading-relaxed w-[80%]">
