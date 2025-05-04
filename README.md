@@ -1,4 +1,4 @@
-# VIT UNIVERSITY SITE
+# PARALLAX DEMO SITE
 
 This is a website landing page with parallax effect.
 
